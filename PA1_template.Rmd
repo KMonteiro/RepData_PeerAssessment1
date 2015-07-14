@@ -9,7 +9,7 @@ output:
 ## Loading and preprocessing the data
 Load libraries to be used later
 
-```{r load_libraries echo=FALSE}
+```{r, message=F, warning=F}
 library(dplyr) #reloading here to make group_by work in Knitr
 library(ggplot2) #reloading here to make group_by work in Knitr
 ```
