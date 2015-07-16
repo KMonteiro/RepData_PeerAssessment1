@@ -11,9 +11,10 @@ library(ggplot2) #reloading here to make group_by work in Knitr
 
 
 Load the data (i.e. read.csv())
-Read in the activity data from previously downloaded CSV dataset
+Unzip and read in the activity data from previously downloaded CSV dataset
 
 ```{r load_data}
+unzip("activity.zip", c("activity.csv"))
 activity <- read.csv("activity.csv")
 ```
 

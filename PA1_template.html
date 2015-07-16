@@ -67,8 +67,9 @@ img {
 <p>Load libraries to be used later</p>
 <pre class="r"><code>library(dplyr) #reloading here to make group_by work in Knitr
 library(ggplot2) #reloading here to make group_by work in Knitr</code></pre>
-<p>Load the data (i.e. read.csv()) Read in the activity data from previously downloaded CSV dataset</p>
-<pre class="r"><code>activity &lt;- read.csv(&quot;activity.csv&quot;)</code></pre>
+<p>Load the data (i.e. read.csv()) Unzip and read in the activity data from previously downloaded CSV dataset</p>
+<pre class="r"><code>unzip(&quot;activity.zip&quot;, c(&quot;activity.csv&quot;))
+activity &lt;- read.csv(&quot;activity.csv&quot;)</code></pre>
 <div id="what-is-mean-total-number-of-steps-taken-per-day" class="section level3">
 <h3>What is mean total number of steps taken per day?</h3>
 <p>For this part of the assignment, we ignore the missing values in the dataset.</p>
