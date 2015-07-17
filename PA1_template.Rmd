@@ -7,6 +7,7 @@ Load libraries to be used later
 ```{r, message=F, warning=F}
 library(dplyr) #reloading here to make group_by work in Knitr
 library(ggplot2) #reloading here to make group_by work in Knitr
+library(ggplot2) #sacrifice to the knitr gods
 ```
 
 
