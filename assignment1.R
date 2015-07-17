@@ -38,10 +38,12 @@ head(totalsteps)
 
 ## Create a histogram of the aggregated steps by day data
 
+
 hist(totalsteps$steps, breaks=10,
      main = paste("Histogram of Total Steps per Day"), xlab = "Total Steps",
      ylab ="Frequency of Days")
-
+dev.copy(png,'aggsteps.png')
+dev.off()
 ## Calculate the median and mean of the aggregated steps by day data
 
 summary(totalsteps)
@@ -75,6 +77,8 @@ plot(stepinterval, type = "l", xlab ="Time of Day",
 
 axis(side=1, at = seq(0, 2400, by = 100))
 axis(side=2, at = seq(0, 220, by = 10))
+dev.copy(png,'intervals.png')
+dev.off()
 
 ## Which 5-minute interval, on average across all the days in the dataset,
 ## contains the maximum number of steps?
@@ -180,6 +184,8 @@ hist(totalsteps$steps, breaks=10,
 hist(totalNoNAsteps$steps, breaks=10,
      main = paste("Histogram of Total Steps per Day (NO NAs)"), xlab = "Total Steps",
      ylab ="Frequency of Days")
+dev.copy(png,'noNAhist.png')
+dev.off()
 
 
 ## Calculate the median and mean of the aggregated steps by day data
@@ -266,6 +272,8 @@ activityNoNAsbyInt <- summarise(activityNoNAsbyInt, meansteps = mean(steps))
 
 plot <- ggplot(activityNoNAsbyInt, aes(x = interval, y = meansteps)) + 
   geom_line() + facet_grid(day ~ .) + scale_x_continuous("Time of Day", breaks = seq(0, 2400, by = 100)) +
-  scale_y_continuous("Mean number of steps", seq(0, 220, by = 10)) + ggtitle("Mean steps measured at 5 minute intervals")
+  scale_y_continuous("Mean number of steps", seq(0, 220, by = 30)) + ggtitle("Mean steps measured at 5 minute intervals")
 plot
+dev.copy(png,'wkdaywkend.png')
+dev.off()
 
